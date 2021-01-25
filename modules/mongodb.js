@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb');
 
-const uri = "mongodb://mongokatu:katu@192.168.1.11:27888/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false"
+const uri = "mongodb+srv://yoshua:admin@prodequa.afp7b.mongodb.net/test"
 
 const main = async () =>{
   const client = new MongoClient(uri);
