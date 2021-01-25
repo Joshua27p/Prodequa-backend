@@ -39,7 +39,7 @@ async function createForm (newListing){
     // añadiendo fecha a los formularios creados 
     const date = new Date()
     newListing["dateCreated"] = date
-    const result = await client.db("prodecua").collection("forms").insertOne(newListing);
+    const result = await client.db("prodequa").collection("forms").insertOne(newListing);
     console.log(`New listing created with the following id: ${result.insertedId}`);
     return result;  
   }catch(e){
@@ -52,7 +52,7 @@ const readForms = async() =>{
   const client = new MongoClient(uri);
   try{
     await client.connect();
-    const cursor = await client.db("prodecua").collection("forms").find()
+    const cursor = await client.db("prodequa").collection("forms").find()
     const result = await cursor.toArray();
     console.log(result)
     return result;
